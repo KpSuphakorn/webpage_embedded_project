@@ -238,16 +238,16 @@ function Home() {
 
     return (
         <div className="p-4 bg-white h-full bg-cover bg-center">
-            <h1 className="text-6xl font-bold flex justify-center mt-12 text-secondary">Dashboard</h1>
+            <h1 className="text-6xl font-bold flex justify-center mt-12 mb-8 text-secondary">Dashboard</h1>
 
             {/* Section: Watering Data */}
-            <section className="flex justify-center my-4 border-2 border-secondary p-4 rounded-3xl">
+            <section className="flex justify-center my-4 border-2 border-secondary p-4 rounded-3xl pb-12">
                 <div className="flex flex-col">
                     <div className="flex justify-center items-center">
-                        <h2 className="text-secondary text-3xl font-extrabold text-center my-4">Overall at Now</h2>
-                        <button onClick={handleFetchOverallRealtime}>
+                        <h2 className="text-secondary text-3xl font-extrabold text-center my-4">Overall at now</h2>
+                        {/* <button onClick={handleFetchOverallRealtime}>
                             <img src="./overall/refresh.png" alt="refresh" className="w-[24px] h-[24px] ml-2"/>
-                        </button>
+                        </button> */}
                     </div>
 
 
@@ -272,7 +272,7 @@ function Home() {
                     <div className="flex justify-center items-center text-lg text-dark-transparent font-semibold">
                         <div className="flex-col justify-center items-center">
                             <div className="flex justify-center">
-                                <img className="w-1/3" src="./overall/temp.png" alt="temp" />
+                                <img className="w-1/3" src="./overall/temp_2.png" alt="temp" />
                             </div>
                             <div className="flex justify-center">
                                 <p className="mt-2">Temperature: {overallRealtime.temperature}°C</p>
@@ -280,7 +280,7 @@ function Home() {
                         </div>
                         <div className="flex-col justify-center items-center">
                             <div className="flex justify-center">
-                                <img className="w-1/3" src="./overall/humidity.png" alt="humidity" />
+                                <img className="w-1/3" src="./overall/humidity_2.png" alt="humidity" />
                             </div>
                             <div className="flex justify-center">
                                 <p className="mt-2">Humidity: {overallRealtime.humidity}%</p>
@@ -288,7 +288,7 @@ function Home() {
                         </div>
                         <div className="flex-col justify-center items-center mt-6">
                             <div className="flex justify-center">
-                                <img className="w-1/3" src="./overall/air.png" alt="air" />
+                                <img className="w-1/3" src="./overall/air_2.png" alt="air" />
                             </div>
                             <div className="flex-col justify-center">
                                 <p className="mt-2 flex justify-center">Air Quality: {overallRealtime.airQuality_val}</p>
@@ -297,7 +297,7 @@ function Home() {
                         </div>
                         <div className="flex-col justify-center items-center mt-6">
                             <div className="flex justify-center">
-                                <img className="w-1/3" src="./overall/light.png" alt="temp" />
+                                <img className="w-1/3" src="./overall/light_2.png" alt="temp" />
                             </div>
                             <div className="flex-col justify-center">
                                 <p className="mt-2 flex justify-center">Light Intensity: {overallRealtime.airQuality_val}</p>
@@ -306,7 +306,7 @@ function Home() {
                         </div>
                         <div className="flex-col justify-center items-center">
                             <div className="flex justify-center">
-                                <img className="w-1/3" src="./overall/soil.png" alt="temp" />
+                                <img className="w-1/3" src="./overall/soil_2.png" alt="temp" />
                             </div>
                             <div className="flex justify-center">
                                 <p className="mt-2">Soil Moisture: {overallRealtime.soilMoisture}</p>
@@ -317,8 +317,8 @@ function Home() {
                 </div>
             </section>
 
-            <div className="py-4">
-                <div className="flex justify-center pb-4">
+            <div className="pt-4 pb-8">
+                <div className="flex justify-center py-4">
                     <h2 className="text-secondary text-3xl font-bold">Search Data by Date</h2>
                 </div>
                 <div className=" justify-center flex">
@@ -341,13 +341,15 @@ function Home() {
 
 
             {/* Section: Emotions */}
-            <section className="bg-white border-2 border-secondary p-4 rounded-3xl flex-col justify-center">
-                <div className="flex content-center justify-center">
-                    <h2 className="text-secondary text-3xl font-bold">Emotions</h2>
-                </div>
-                {/* Filtered Emotion Data */}
-                <div className="flex justify-center">
-                    <h3 className="text-2xl font-extrabold text-secondary">Emotion Results for: {displayDate}</h3>
+            <section className="bg-white border-2 border-secondary p-4 pb-12 rounded-3xl flex-col justify-center">
+                <div className="mt-4 mb-8">
+                    <div className="flex content-center justify-center">
+                        <h2 className="text-secondary text-3xl font-bold">Emotions</h2>
+                    </div>
+                    {/* Filtered Emotion Data */}
+                    <div className="flex justify-center">
+                        <h3 className="text-2xl font-extrabold text-secondary">Emotion Results for: {displayDate}</h3>
+                    </div>
                 </div>
                 <div className="flex flex-col md:flex-row min-h-24">
                     {/* First Group: angry fear */}
@@ -419,8 +421,8 @@ function Home() {
             </section>
 
             {/* Section: Search by Date */}
-            <section className="flex-col align-center text-xl my-8">
-                <div className="bg-white border-2 border-secondary rounded-3xl flex-col justify-center w-100 my-4 py-4">
+            <section className="flex-col align-center text-xl my-8 ">
+                <div className="bg-white border-2 border-secondary rounded-3xl flex-col justify-center w-100 my-4 py-4 pb-12">
                     {/* <div className=" justify-center flex">
                         <button onClick={handleFetchWatersByDate} disabled={!date || loading}>
                             {loading ? "Loading Waters..." : "Fetch Waters"}
@@ -428,21 +430,23 @@ function Home() {
                     </div> */}
                     {error && <p style={{ color: "red" }}>Error: {error}</p>}
 
-                    <div className="flex content-center justify-center">
-                        <h2 className="text-secondary text-3xl font-bold">Watering</h2>
-                    </div>
+                    <div className="pt-4 pb-8">
+                        <div className="flex content-center justify-center">
+                            <h2 className="text-secondary text-3xl font-bold">Watering</h2>
+                        </div>
 
-                    {/* Filtered Water Data */}
-                    <div className="flex justify-center">
-                        <h3 className="text-2xl font-extrabold text-secondary">Watering Results for: {date}</h3>
+                        {/* Filtered Water Data */}
+                        <div className="flex justify-center">
+                            <h3 className="text-2xl font-extrabold text-secondary">Watering Results for: {date}</h3>
+                        </div>
                     </div>
 
                     <div className="flex justify-center my-2">
-                        <img src="./overall/watering.png" alt="watering" className="w-1/12" />
+                        <img src="./overall/watering_3.png" alt="watering" className="w-1/12" />
                     </div>
 
 
-                    <div className="flex justify-center my-4">
+                    <div className="flex justify-center mt-8">
                         {filteredWaters.length === 0 ? (
                         <p>No watering data available</p>
                         ) : (
@@ -460,8 +464,8 @@ function Home() {
                 </div>
             </section>
                 
-            <section className="flex-col p-4 border-2 border-secondary rounded-3xl">
-                <div className="flex justify-center">
+            <section className="flex-col p-4 border-2 border-secondary rounded-3xl mb-4 pb-12">
+                <div className="flex justify-center my-8">
                     <h2 className="text-3xl font-bold text-secondary">Overall in your room</h2>
                 </div>
                 <div>
@@ -476,7 +480,7 @@ function Home() {
                     <div className="flex justify-center items-center text-lg text-dark-transparent">
                         <div className="flex-col justify-center items-center mt-6">
                             <div className="flex justify-center">
-                                <img className="w-1/3" src="./overall/temp.png" alt="temp" />
+                                <img className="w-1/3" src="./overall/temp_2.png" alt="temp" />
                             </div>
                             <div className="flex-col justify-center items-center text-center">
                                 <div className="flex justify-center mt-2 font-semibold">Temperature</div>
@@ -487,7 +491,7 @@ function Home() {
                         </div>
                         <div className="flex-col justify-center items-center mt-6">
                             <div className="flex justify-center">
-                                <img className="w-1/3" src="./overall/humidity.png" alt="humidity" />
+                                <img className="w-1/3" src="./overall/humidity_2.png" alt="humidity" />
                             </div>
                             <div className="flex-col justify-center items-center text-center">
                                 <div className="flex justify-center mt-2 font-semibold">Humidity</div>
@@ -498,7 +502,7 @@ function Home() {
                         </div>
                         <div className="flex-col justify-center items-center mt-6">
                             <div className="flex justify-center">
-                                <img className="w-1/3" src="./overall/air.png" alt="air" />
+                                <img className="w-1/3" src="./overall/air_2.png" alt="air" />
                             </div>
                             <div className="flex-col justify-center">
                                 <p className="mt-2 flex justify-center font-semibold">Air Quality</p>
@@ -509,7 +513,7 @@ function Home() {
                         </div>
                         <div className="flex-col justify-center items-center mt-6">
                             <div className="flex justify-center">
-                                <img className="w-1/3" src="./overall/light.png" alt="temp" />
+                                <img className="w-1/3" src="./overall/light_2.png" alt="temp" />
                             </div>
                             <div className="flex-col justify-center">
                                 <p className="mt-2 flex justify-center font-semibold">Light Intensity</p>
@@ -520,7 +524,7 @@ function Home() {
                         </div>
                         <div className="flex-col justify-center items-center mt-6">
                             <div className="flex justify-center">
-                                <img className="w-1/3" src="./overall/soil.png" alt="temp" />
+                                <img className="w-1/3" src="./overall/soil_2.png" alt="temp" />
                             </div>
                             <div className="flex-col justify-center">
                                 <div className="mt-2 flex justify-center font-semibold">Soil Moisture</div>

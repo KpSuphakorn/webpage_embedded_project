@@ -5,6 +5,8 @@ import {
     fetchWatersByDate, 
     fetchEmotionsByDate 
 } from "../libs/api";
+// import '../global.css';
+
 
 interface WaterData {
     _id: string;
@@ -17,7 +19,7 @@ interface Emotion {
     count: number;
 }
 
-const Home = () => {
+function Home() {
     const [waters, setWaters] = useState<WaterData[]>([]);
     const [emotions, setEmotions] = useState<Emotion[]>([]);
     const [filteredWaters, setFilteredWaters] = useState<WaterData[]>([]);
@@ -68,23 +70,27 @@ const Home = () => {
     };
 
     return (
-        <div>
-            <h1>Dashboard</h1>
+        <div className="p-4 bg-secondary h-screen bg-cover bg-center">
+            <h1 className="text-mobile-h1 md:text-desktop-h1 text-primary">Dashboard</h1>
 
             {/* Section: Watering Data */}
-            <section>
-                <h2>Watering Data</h2>
+            <section className="my-4 bg-light-grey p-4 rounded-3xl">
+                <h2 className="text-secondary text-mobile-h2 md:text-desktop-h2">Watering Data</h2>
+
                 {waters.map((water) => (
                     <div key={water._id}>
-                        <h3>{water.date}</h3>
-                        <p>Times: {water.water_time.length}</p>
+                        <h3 className="text-dark-transparent text-mobile-h2 md:text-desktop-h3">{water.date}</h3>
+                        <div className="text-mobile-base md:text-desktop-base flex">
+                            <p className="text-secondary" >Times :&nbsp;</p>
+                            <p className="t">{water.water_time.length}</p>
+                        </div>
                     </div>
                 ))}
             </section>
 
             {/* Section: Emotions */}
-            <section>
-                <h2>Emotions</h2>
+            <section className="bg-light-grey p-4 rounded-3xl">
+                <h2 className="text-secondary text-mobile-h2 md:text-desktop-h2">Emotions</h2>
                 <ul>
                     {emotions.map((emotion, index) => (
                         <li key={`${emotion.emotion}-${index}`}>

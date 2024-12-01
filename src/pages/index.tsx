@@ -238,13 +238,13 @@ function Home() {
 
     return (
         <div className="p-4 bg-white h-full bg-cover bg-center">
-            <h1 className="text-6xl font-bold flex justify-center mt-12 mb-8 text-secondary">Dashboard</h1>
+            <h1 className="text-6xl font-bold flex justify-center mt-12 mb-8 text-dark">Dashboard</h1>
 
             {/* Section: Watering Data */}
             <section className="flex justify-center my-4 border-2 border-secondary p-4 rounded-3xl pb-12">
                 <div className="flex flex-col">
                     <div className="flex justify-center items-center">
-                        <h2 className="text-secondary text-3xl font-extrabold text-center my-4">Overall at now</h2>
+                        <h2 className="text-dark text-3xl font-extrabold text-center my-4">Overall at now</h2>
                         {/* <button onClick={handleFetchOverallRealtime}>
                             <img src="./overall/refresh.png" alt="refresh" className="w-[24px] h-[24px] ml-2"/>
                         </button> */}
@@ -319,7 +319,7 @@ function Home() {
 
             <div className="pt-4 pb-8">
                 <div className="flex justify-center py-4">
-                    <h2 className="text-secondary text-3xl font-bold">Search Data by Date</h2>
+                    <h2 className="text-dark text-3xl font-bold">Search Data by Date</h2>
                 </div>
                 <div className=" justify-center flex">
                     <input
@@ -344,11 +344,11 @@ function Home() {
             <section className="bg-white border-2 border-secondary p-4 pb-12 rounded-3xl flex-col justify-center">
                 <div className="mt-4 mb-8">
                     <div className="flex content-center justify-center">
-                        <h2 className="text-secondary text-3xl font-bold">Emotions</h2>
+                        <h2 className="text-dark text-3xl font-bold">Emotions</h2>
                     </div>
                     {/* Filtered Emotion Data */}
                     <div className="flex justify-center">
-                        <h3 className="text-2xl font-extrabold text-secondary">Emotion Results for: {displayDate}</h3>
+                        <h3 className="text-2xl font-extrabold text-dark">Emotion Results for: {displayDate}</h3>
                     </div>
                 </div>
                 <div className="flex flex-col md:flex-row min-h-24">
@@ -432,12 +432,12 @@ function Home() {
 
                     <div className="pt-4 pb-8">
                         <div className="flex content-center justify-center">
-                            <h2 className="text-secondary text-3xl font-bold">Watering</h2>
+                            <h2 className="text-dark text-3xl font-bold">Watering</h2>
                         </div>
 
                         {/* Filtered Water Data */}
                         <div className="flex justify-center">
-                            <h3 className="text-2xl font-extrabold text-secondary">Watering Results for: {date}</h3>
+                            <h3 className="text-2xl font-extrabold text-dark">Watering Results for: {date}</h3>
                         </div>
                     </div>
 
@@ -466,7 +466,7 @@ function Home() {
                 
             <section className="flex-col p-4 border-2 border-secondary rounded-3xl mb-4 pb-12">
                 <div className="flex justify-center my-8">
-                    <h2 className="text-3xl font-bold text-secondary">Overall in your room</h2>
+                    <h2 className="text-3xl font-bold text-dark">Overall in your room</h2>
                 </div>
                 <div>
                     {/* temp , humi , air , light , soil */}

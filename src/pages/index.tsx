@@ -131,16 +131,16 @@ function Home() {
     
 
     return (
-        <div className="p-4 bg-secondary h-full bg-cover bg-center">
-            <h1 className="text-6xl font-bold flex justify-center mt-12 text-white">Dashboard</h1>
+        <div className="p-4 bg-white h-full bg-cover bg-center">
+            <h1 className="text-6xl font-bold flex justify-center mt-12 text-secondary">Dashboard</h1>
 
             {/* Section: Watering Data */}
-            <section className="flex justify-center my-4 bg-light-grey p-4 rounded-3xl">
+            <section className="flex justify-center my-4 border-2 border-secondary p-4 rounded-3xl">
                 <div className="flex-col">
-                    <h2 className="text-secondary text-mobile-h2 md:text-desktop-h2">Watering Data</h2>
+                    <h2 className="text-secondary text-3xl font-extrabold">Watering Data</h2>
 
                     {waters.map((water) => (
-                        <div className="" key={water._id}>
+                        <div className="flex- justify-center" key={water._id}>
                             <h3 className="text-dark-transparent text-mobile-h2 md:text-desktop-h3">{water.date}</h3>
                             <div className="text-mobile-base md:text-desktop-base flex">
                                 <p className="text-secondary" >Times :&nbsp;</p>
@@ -152,9 +152,9 @@ function Home() {
             </section>
 
             {/* Section: Emotions */}
-            <section className="bg-light-grey p-4 rounded-3xl flex-col justify-center">
+            <section className="bg-white border-2 border-secondary p-4 rounded-3xl flex-col justify-center">
                 <div className="flex content-center justify-center">
-                    <h2 className="text-secondary text-mobile-h2 md:text-desktop-h2">Emotions</h2>
+                    <h2 className="text-secondary text-3xl font-bold">Emotions</h2>
                 </div>
                 {/* <ul>
                     {emotions.map((emotion, index) => (
@@ -167,11 +167,15 @@ function Home() {
                     {/* First Group: angry fear */}
                     <div className="flex flex-col md:flex-row mb-4 md:mb-0">
                         <div className="flex-col justify-center md:mx-4 mx-2 ">
-                            <img src="./emotion/angry.svg" alt="angry" className=" w-1/6 md:w-full" />
+                            <div className="flex justify-center">
+                                <img src="./emotion/angry.svg" alt="angry" className=" w-1/6 md:w-1/2" />
+                            </div>
                             <p className="text-desktop-highlight flex justify-center mt-4">{getEmotionPercentage("angry")}%</p>
                         </div>
                         <div className="flex-col justify-center md:mx-4 mt-4 md:mt-0 mx-2">
-                            <img src="./emotion/fear.svg" alt="fear" className=" w-1/6 md:w-full" />
+                            <div className="flex justify-center">
+                                <img src="./emotion/fear.svg" alt="fear" className=" w-1/6 md:w-1/2" />
+                            </div>
                             <p className="text-desktop-highlight flex justify-center mt-4">{getEmotionPercentage("fear")}%</p>
                         </div>
                     </div>
@@ -179,31 +183,41 @@ function Home() {
                     {/* Second Group: neutral sad */}
                     <div className="flex flex-col md:flex-row mb-4 md:mb-0">
                         <div className="flex-col justify-center md:mx-4 mx-2 md:">
-                            <img src="./emotion/neutral.svg" alt="neutral" className=" w-1/6 md:w-full" />
+                            <div className="flex justify-center">
+                                <img src="./emotion/neutral.svg" alt="neutral" className=" w-1/6 md:w-1/2" />
+                            </div>
                             <p className="text-desktop-highlight flex justify-center mt-4">{getEmotionPercentage("neutral")}%</p>
                         </div>
                         <div className="flex-col justify-center md:mx-4 mt-4 md:mt-0 mx-2">
-                            <img src="./emotion/sad.svg" alt="sad" className=" w-1/6 md:w-full" />
-                            <p className="text-desktop-highlight flex justify-center mt-4">{getEmotionPercentage("sad")}%</p>
+                            <div className="flex justify-center">
+                                <img src="./emotion/sad.svg" alt="sad" className=" w-1/6 md:w-1/2" />
+                            </div>
+                            <div className="text-desktop-highlight flex justify-center mt-4">{getEmotionPercentage("sad")}%</div>
                         </div>
                     </div>
 
                     {/* Third Group: disgust happy */}
                     <div className="flex flex-col md:flex-row mb-4 md:mb-0">
                         <div className="flex-col justify-center md:mx-4 mx-2 md:">
-                            <img src="./emotion/disgust.svg" alt="disgust" className=" w-1/6 md:w-full" />
+                            <div className="flex justify-center">
+                                <img src="./emotion/disgust.svg" alt="disgust" className=" w-1/6 md:w-1/2" />
+                            </div>
                             <p className="text-desktop-highlight flex justify-center mt-4">{getEmotionPercentage("disgust")}%</p>
                         </div>
-                        <div className="flex-col justify-center md:mx-4 mt-4 md:mt-0 mx-2">
-                            <img src="./emotion/happy.svg" alt="happy" className=" w-1/6 md:w-full" />
+                        <div className="flex-col items-center justify-center md:mx-4 mt-4 md:mt-0 mx-2">
+                            <div className="flex justify-center">
+                                <img src="./emotion/happy.svg" alt="happy" className=" w-1/6 md:w-1/2" />
+                            </div>
                             <p className="text-desktop-highlight flex justify-center mt-4">{getEmotionPercentage("happy")}%</p>
                         </div>
                     </div>
 
                     {/* Surprise */}
                     <div className="flex flex-col md:flex-row mb-4 md:mb-0">
-                        <div className="flex-col justify-center md:mx-4 mx-2 md:">
-                            <img src="./emotion/surprise.svg" alt="surprise" className=" w-1/6 md:w-full" />
+                        <div className="flex-col items-center justify-center md:mx-4 mx-2 md:">
+                            <div className="flex justify-center">
+                                <img src="./emotion/surprise.svg" alt="Surprise" className=" w-1/6 md:w-1/2" />
+                            </div>
                             <p className="text-desktop-highlight flex justify-center mt-4">{getEmotionPercentage("surprise")}%</p>
                         </div>
                     </div>
@@ -213,9 +227,9 @@ function Home() {
             {/* Section: Search by Date */}
             <section className="flex-col align-center text-xl">
                 <div className="flex justify-center py-4 ">
-                    <h2 className="text-white text-2xl font-bold">Search Data by Date</h2>
+                    <h2 className="text-secondary text-3xl font-bold">Search Data by Date</h2>
                 </div>
-                <div className="bg-white rounded-3xl flex-col justify-center w-100 my-4 py-4">
+                <div className="bg-white border-2 border-secondary rounded-3xl flex-col justify-center w-100 my-4 py-4">
                     <div className=" justify-center flex">
                         <input
                             type="date"
@@ -237,7 +251,7 @@ function Home() {
 
                     {/* Filtered Water Data */}
                     <div className="flex justify-center">
-                        <h3 className="text-2xl text-bold text-cyan-800">Watering Results for: {date}</h3>
+                        <h3 className="text-2xl font-extrabold text-secondary">Watering Results for: {date}</h3>
                     </div>
                     <div className="flex justify-center">
                         {filteredWaters.length === 0 ? (
@@ -254,7 +268,7 @@ function Home() {
 
                     {/* Filtered Emotion Data */}
                     <div className="flex justify-center">
-                        <h3 className="text-2xl text-bold text-cyan-800">Emotion Results for: {date}</h3>
+                        <h3 className="text-2xl font-extrabold text-secondary">Emotion Results for: {date}</h3>
                     </div>
                     <div className="flex justify-center">
                         {filteredEmotions.length === 0 ? (

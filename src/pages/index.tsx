@@ -300,7 +300,7 @@ function Home() {
                                 <img className="w-1/3" src="./overall/light_2.png" alt="temp" />
                             </div>
                             <div className="flex-col justify-center">
-                                <p className="mt-2 flex justify-center">Light Intensity: {overallRealtime.airQuality_val}</p>
+                                <p className="mt-2 flex justify-center">Light Intensity: {overallRealtime.lightIntensity_val}</p>
                                 <p className=" flex justify-center text-sm">({overallRealtime.lightIntensity_string})</p>
                             </div>
                         </div>
